@@ -6,7 +6,7 @@ SCREEN_W = 800
 SCREEN_H = 600
 
 rl.init_window(SCREEN_W, SCREEN_H, "naco")
-rl.set_target_fps(10)
+rl.set_target_fps(5)
 
 config = sim.Config()
 state = sim.init_state(config)
