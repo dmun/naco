@@ -6,8 +6,10 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "jax>=0.6.0",
+    "matplotlib>=3.10.9",
     "numpy>=2.2.5",
     "raylib>=5.5.0.2",
+    "tqdm>=4.67.3",
 ]
 
 [tool.pyrefly]
