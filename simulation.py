@@ -77,7 +77,9 @@ def init_state(cfg: Config) -> State:
 def respawn(agents: Agents, cfg: Config, key) -> Agents:
     key, k1, k2 = random.split(key, 3)
 
-    parent_idx = random.randint(k1, (cfg.n_agents,), 0, cfg.n_agents)
+    alive_mask = agents.alive.astype(float)
+    parent_idx = random.choice(k1, cfg.n_agents, shape=(cfg.n_agents,), p=alive_mask / alive_mask.sum())
+    # parent_idx = random.randint(k1, (cfg.n_agents,), 0, cfg.n_agents)
 
     # temporary way of inheriting traits
     new_vision = agents.vision[parent_idx] + random.randint(k2, (cfg.n_agents,), -1, 2)
