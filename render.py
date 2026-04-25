@@ -1,7 +1,7 @@
 import pyray as rl
 from simulation import Config, State
 
-CELL_SIZE = 20
+CELL_SIZE = 15
 
 
 def iter_agents(state: State):
@@ -44,9 +44,6 @@ def draw_food(state: State):
         rl.draw_rectangle(
             x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE, rl.DARKGREEN
         )
-        rl.draw_rectangle_lines(
-            x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE, rl.BLACK
-        )
 
 
 def draw_grid(cfg: Config):
@@ -65,3 +62,4 @@ def draw(state: State, cfg: Config):
     draw_food(state)
 
     rl.draw_text(f"step: {state.step}", 10, 10, 24, rl.WHITE)
+    rl.draw_text(f"avg vision: {state.agents.mean_vision:.2f}", 10, 34, 24, rl.WHITE)

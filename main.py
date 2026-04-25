@@ -2,11 +2,11 @@ import render as ui
 import pyray as rl
 import simulation as sim
 
-SCREEN_W = 800
-SCREEN_H = 600
+SCREEN_W = 1024
+SCREEN_H = 768
 
 rl.init_window(SCREEN_W, SCREEN_H, "naco")
-rl.set_target_fps(5)
+rl.set_target_fps(60)
 
 config = sim.Config()
 state = sim.init_state(config)
